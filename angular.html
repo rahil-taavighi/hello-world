@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World با Angular</title>
+    <!-- لود کردن AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body { font-family: Tahoma, sans-serif; display: flex; justify-content: center; align-items: center; height: 90vh; background: #fff1f2; }
+        .card { background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(225,29,72,0.15); border-top: 5px solid #e11d48; }
+        h1 { color: #e11d48; }
+        input { padding: 8px; border: 1px solid #ccc; border-radius: 6px; margin-top: 10px; }
+    </style>
+</head>
+<body ng-app="helloApp" ng-controller="HelloController">
+
+    <div class="card">
+        <h1>سلام دنیا از Angular! 🅰️</h1>
+        <p>{{ message }}</p>
+        <p>نام شما: <input type="text" ng-model="userName" placeholder="نام خود را بنویسید"></p>
+        <p ng-show="userName">سلام، <b>{{ userName }}</b> خوش آمدی!</p>
+    </div>
+
+    <script>
+        // ساخت ماژول و کنترلر آنگولار
+        var app = angular.module('helloApp', []);
+        app.controller('HelloController', function($scope) {
+            $scope.message = "این نمونه با ویژگی Two-way Data Binding کار می‌کند.";
+            $scope.userName = "";
+        });
+    </script>
+</body>
+</html>
