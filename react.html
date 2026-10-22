@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World با React</title>
+    <!-- لود کردن هسته ری‌اکت و بابل از طریق CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body { font-family: Tahoma, sans-serif; display: flex; justify-content: center; align-items: center; height: 90vh; background: #0f172a; color: white; }
+        .card { background: #1e293b; padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #38bdf8; }
+        h1 { color: #38bdf8; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // تعریف کامپوننت ری‌اکت
+        function HelloWorld() {
+            return (
+                <div className="card">
+                    <h1>سلام دنیا از کامپوننت React! ⚛️</h1>
+                    <p>این صفحه با React 18 اجرا شده است.</p>
+                </div>
+            );
+        }
+
+        // رندر کردن کامپوننت
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<HelloWorld />);
+    </script>
+</body>
+</html>
